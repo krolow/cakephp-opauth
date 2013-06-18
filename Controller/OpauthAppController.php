@@ -27,6 +27,7 @@ class OpauthAppController extends AppController {
 	 * Catch all for Opauth
 	 */
 	public function index(){
+		$this->Session->write('Opauth.referer', $this->referer());
 		$this->_loadOpauth();
 		$this->Opauth->run();
 		
